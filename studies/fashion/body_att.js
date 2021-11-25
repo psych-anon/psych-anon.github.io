@@ -2,7 +2,7 @@
 var subjID, IP, mTurkID;
 
 //Change at your discretion
-var study = "ratings/body_att"; //**********CHANGEME**********
+var study = "ratings/body_att"; //CHANGEME
 subjID = getSubjID(10); // # is the length of subjID
 //preventTouch(); // If you don't want people to use phones/tablets
 
@@ -17,55 +17,45 @@ if (mTurkID == undefined) {
 	mTurkID = '';
 }
 
+var voteTask = new voteObj();
+// Change demoTask to surveyTask if you want to ask questions at the end
+voteTask.nextTask = function() {
+	// This is the command that logs turkers into the database
+	$.get('https://expt.hehmanlab.org/scripts/log_turker.php', {mTurkID : mTurkID, study : study, subjID : subjID}, function (d) {console.log(d)});
+	demoTask.start();
+	
+}
+
 // Uncomment the below lines if you want to ask surveys. Include survey names in the new survey brackets
-var surveyTask = new survey(['datacheck.txt']);
-surveyTask.nextTask = function(){demoTask.start();}
-
-surveyTask.background_color = '#D4E2EB';
-
-// NEW FEATURE OF MULTIPLE PROMPTS
-// this set of prompts (prompts1) will be randomly ordered per participant (but not per trial)
-var prompts = ['How attractive is this person?']
-var voteTask = new voteMultipleObj(prompts);
-voteTask.nextTask = function(){surveyTask.start();}
-
-
+// var surveyTask = new survey(['GES.txt','L2C.txt']);
+// surveyTask.nextTask = function(){demoTask.start();}
 
 var demoTask = new demo();
-demoTask.info['age']['include']=true; //
-demoTask.info['mouse']['include']=false; //
-demoTask.info['gender']['include']=true; //
-demoTask.info['sexOrientation']['include']=true; //
-demoTask.info['english']['include']=false; //
-demoTask.info['hispanic']['include']=true; //
-demoTask.info['race']['include']=true; //
-demoTask.info['recognize_faces']['include']=true; //
-demoTask.info['whatResponseStyle']['include']=true; //
+demoTask.info['age']['include']=true; //CHANGEME (IF YOU WANT)
+demoTask.info['mouse']['include']=false; //CHANGEME (IF YOU WANT)
+demoTask.info['gender']['include']=true; //CHANGEME (IF YOU WANT)
+demoTask.info['english']['include']=false; //CHANGEME (IF YOU WANT)
+demoTask.info['hispanic']['include']=true; //CHANGEME (IF YOU WANT)
+demoTask.info['race']['include']=true; //CHANGEME (IF YOU WANT)
 demoTask.height= 'auto';
 demoTask.width= '1000px';
-demoTask.background_color='#D4E2EB';
+demoTask.background_color='#B8DBFF';
 
 // Change the main splash screen instructions here:
-var consentTitle = ['Test a McGill App Under Development'];
+var consentTitle = ['Study on Perceiving People'];
 
 var consentText = [
 // each separate block of text will be separated by newlines
 // add or remove blocks as desired
-	'Evaluate people on a face rating app on various traits.',
-    'Thank you for expressing interest in our app development study.',
-	'Our research explores how people form impressions of others from their facial appearance.',
-	'In this study, you will be testing a modified version of a Montreal-based face rating app developed by McGill students, researchers at McGill, and a Montreal-based technology company. The app is currently in the alpha stage of testing, and we are collecting face rating data to improve our prediction algorithms. Faces are everywhere in daily life, and we are interested in how people identify characteristics of others from their faces.',
-
-    'While we are using this data to improve our app, you will not be using the app itself at this point.',
-    'You will be shown faces of real people, and asked to share your impressions of them by rating them on a few traits. To move onto the next profile, complete all the ratings and click NEXT.',
- 	'This process will take approximately ~30 minutes, although you will be given one hour to complete the study.'
+	'Welcome to the experiment! Thank you for your participation.',
+    	'In this experiment, you will be presented with 80 photographs of different people. Your task is to rate these different photographs based on how attractive you think they are',
+    	'This task will take approximately 6 minutes to complete, although you will be given one hour to complete the task and enter your code into Mechanical Turk.'
 	]; 
 var consentBold = [ 
 // each separate block of text will be separated by newlines
 // add or remove blocks as desired
 	'Please DO NOT use your browser\'s back or reload buttons!',
-	'Please only use an external MOUSE and not your laptop\'s trackpad.',
-	'To help us make sense of our findings, please form these impressions as you realistically would in everyday life. After the study, you will be asked to complete a short demographic survey and give feedback on your experience.'
+	'You will receive the code for Mechanical Turk at the end of the study.'
 	];
 // You can change how they display by altering the "type" below (e.g. h1/h2/h3/p, etc.)
 // Writes text to splash page and adds a button to start the first task
@@ -75,41 +65,14 @@ postInstructions([
 		wrap([consentBold,'h3','.instructions'])],
 		voteTask); // Make sure you put your first task here
 
-// **********CHANGEME********** Change task-specific information here
-voteTask.name = "body_att"; // CHANGEME
-// Set the scale and instructions for the first set of prompts (prompt1)
-voteTask.prompt="What's your first impression of this person?";
-voteTask.instructions=['Evaluate people on a face rating app on various traits.'];
-voteTask.trialScale = ["Not at all","  ","  ","Neutral","  ","  ","Very much"]; 
+// Change task-specific information here
+voteTask.name = "body_att";
+voteTask.prompt="How attractive do you think this person is?";
+voteTask.instructions='In the following task, please rate how attractive each person is.';
+voteTask.trialScale = ["Not at all attractive", "", "", "Somewhat attractive", "", "", "Very attractive"];
 
-
-//this is a shuffle function that rearranges an array
-function shuffle(array) {
-    var currentIndex = array.length, temporaryValue, randomIndex;
-  
-    // While there remain elements to shuffle...
-    while (0 !== currentIndex) {
-  
-      // Pick a remaining element...
-      randomIndex = Math.floor(Math.random() * currentIndex);
-      currentIndex -= 1;
-  
-      // And swap it with the current element.
-      temporaryValue = array[currentIndex];
-      array[currentIndex] = array[randomIndex];
-      array[randomIndex] = temporaryValue;
-    }
-    return array;
-  }
-
-// Replace this list with the new stim that we're using (OLD STATIC STIMULI LIST. SEE BELOW FOR RANDOMLY SELECTING X STIM FROM A POOL)
-// voteTask.picArray = ['01_F_HA.jpg', 'AF05NES_F.jpg', 'AM26NES_F.jpg', 'AM34NES_F.jpg', 'ryan.jpg']; 
-// You can use pictures or words 
-
-
-// Provide the full list of stimuli you would like to randomly sample from, from each social category:
-var picListWF = [
-'01_BODY_AS_1.png',
+// Provide the full list of stimuli you would like to randomly sample from
+var picList = ['01_BODY_AS_1.png',
 '01_BODY_AS_2.png',
 '01_BODY_BL_1.png',
 '01_BODY_BS_1.png',
@@ -204,32 +167,45 @@ var picListWF = [
 '12_BODY_LS_2.png',
 '12_BODY_WL_1.png',
 '12_BODY_WS_1.png',
-];
+]; // You can use pictures or words
 
-// Randomly shuffle face stimuli for each group
-picListWF = shuffle(picListWF);
+//this is a shuffle function that rearranges an array
+function shuffle(array) {
+  var currentIndex = array.length, temporaryValue, randomIndex;
 
-// *****CHANGEME****** create an array of all stimuli groups
-var picList = [picListWF]
+  // While there remain elements to shuffle...
+  while (0 !== currentIndex) {
 
-// Truncate the length of the array for each group 
-var PicListLength = 60 // ****CHANGEME**** change this to the number of stimuli from each group that you want to present
+    // Pick a remaining element...
+    randomIndex = Math.floor(Math.random() * currentIndex);
+    currentIndex -= 1;
 
-for (let i = 0; i < picList.length; i++ ) { // Iterate through each stimuli set and truncate
-	if (picList[i].length > PicListLength) {
-		picList[i].length = PicListLength;
-	}
-}; 
-picList = [].concat.apply([], picList); // flatten nested array into 1-d array
-picList = shuffle(picList) // reshuffle the finalized stimuli set, with equal distribution of stimuli from each group
-voteTask.picArray = picList.slice(); // append to Task
+    // And swap it with the current element.
+    temporaryValue = array[currentIndex];
+    array[currentIndex] = array[randomIndex];
+    array[randomIndex] = temporaryValue;
+  }
+
+  return array;
+}
+
+// Here, we define our array of stimuli as a randomly shuffled version of the list
+picList = shuffle(picList);
+
+// This command truncates the length of the array (i.e., the number of trials you want each participant to see
+if (picList.length > 80) { //CHANGE this number to the number of trials you want 
+	picList.length = 80; //CHANGE this number to the number of trials you want
+}
+
+// This command defines the voteTask array as the random subset that is defined above
+voteTask.picArray = picList.slice();
 
 // These are all completely optional for styling
 voteTask.color = 'black';
-voteTask.background_color = '#D4E2EB';
-voteTask.picHeight = '450px'; 
+voteTask.background_color = '#B8DBFF';
+voteTask.picHeight = '500px'; 
 voteTask.width = '1000px';
-voteTask.height = '1111px';
+voteTask.height = '800px';
 
 // Preload images as desired
 // The function takes an array of pictures
@@ -238,12 +214,12 @@ voteTask.height = '1111px';
 preloadImages_new(voteTask.picArray, function(){donePreloading();});
 voteTask.setCounter = function () {
 	voteTask.counter += 1;
-//	$( "#progressbar" ).progressbar({ value: voteTask.counter , max : voteTask.length})
-	//	.show();
+	$( "#progressbar" ).progressbar({ value: voteTask.counter , max : voteTask.length})
+		.show();
 }
 window.onload = function () {
-	//$(function() { $( "#progressbar" ).progressbar({ value: 0, max: voteTask.length })
-	//	.height('5px'); });
+	$(function() { $( "#progressbar" ).progressbar({ value: 0, max: voteTask.length})
+		.height('5px'); });
 	demoTask.writeHTML(); 
 	
 	$('.instructions input').mouseenter(function() {
