@@ -21,7 +21,7 @@ var voteTask = new voteObj();
 // Change demoTask to surveyTask if you want to ask questions at the end
 voteTask.nextTask = function() {
 	// This is the command that logs turkers into the database
-	$.get('https://expt.hehmanlab.org/scripts/log_turker.php', {mTurkID : mTurkID, study : study, subjID : subjID}, function (d) {console.log(d)});
+	$.get('https://psych-anon.github.io/scripts/log_turker.php', {mTurkID : mTurkID, study : study, subjID : subjID}, function (d) {console.log(d)});
 	demoTask.start();
 	
 }
