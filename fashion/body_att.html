@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+ 	<link rel="stylesheet" href="/scripts/webMT_sexy.css">
+	<script type="text/javascript" src="//code.jquery.com/jquery-latest.min.js"></script>
+	<script src="//code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+	<link rel="stylesheet" href="//code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css">	
+	<script type="text/javascript" src="/scripts/pre-loader.js"></script>
+	<script type="text/javascript" src="/scripts/purl.js"></script>
+	<script type="text/javascript" src="/scripts/funcs.js"></script>
+	<script type="text/javascript" src="/scripts/Task.js"></script>
+	<script type="text/javascript" src="/scripts/demo_sallyedits.js"></script>
+	<script type="text/javascript" src="/scripts/surveys.js"></script>
+	<script type="text/javascript" src="/studies/fashion/vote_multiple_sallyedits.js"></script>
+	<!-- 	<script type="text/javascript" src="/scripts/region_USA.js"></script> -->
+	<script type="text/javascript" src="body_att.js"></script>
+</head>
+<body>
+	<div id="progressbar" style="display:none"></div>
+	<div id="screener"></div>
+		
+	<div class = "trial" style="display:none">
+		<h2 id = "prompt"></h2>
+		<table id="imageTable">
+			<tr>
+				<td id="image"></td>
+			</tr>
+			<tr>
+				<td id="image2"></td>
+			</tr>
+		</table>		
+		<div id="answerDiv">
+		<table>
+		<tr id="answers" style="display:none; cursor:pointer">
+		</tr>
+		</table>
+		</div>
+	</div>
+	
+	
+	<div class = "survey" style = "display:none">
+		<div class = "surveyInstructionsScreen"><h2 id = "surveyInstructions"></h2>
+			<input type = "button" onclick = "startSurvey()" value = "Proceed"></input>
+		</div>
+		<div class = "surveyScreen">
+			<h2 id = "surveyPrompt"></h2>
+			<ul id="surveyAnswers">
+			</ul>
+			<table><tr><td id="surveyAnswers"></td></tr></table>
+		</div>
+	</div>
+	
+	<div class = "demographics" style = "display:none">
+	</div>
+		
+	<div class = "thanks" style = "display:none">
+		<p>You're all done!</p>
+		<p>Please notify the researcher.</p>
+		<p>They will take you back to the site where you completed the consent form, and you will be debriefed about the study.</p>
+		<p>The following is your unique participation code. If you wish to withdraw your data from the study, please retain this code and notify the researcher.</p>
+		<h3 id="participantCode"></h3>
+	</div>
+	
+</body>
+</html>
