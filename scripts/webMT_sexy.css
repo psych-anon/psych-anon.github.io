@@ -1,0 +1,95 @@
+.choices {display:block; position:relative; top:0px;}
+.choice {width:90px; height:50px; cursor:pointer; }
+div#c1 {position:relative; float: left; display:inline-block;}
+div#c2 {position:relative; float: right; display:inline-block;}
+img#c1 {position:relative; float: left; display:inline-block; width:50px}
+img#c2 {position:relative;  float: right; display:inline-block; width:50px}
+.choices .choice p {position:relative;  width:80px; margin-left: auto; margin-right: auto; text-align:center; 
+font-size:100%; font-weight: bold; color:white;}
+temp {left:596px;}
+#startTrial {position:relative; top:550px;  height:30px; width:60px; text-align:center; cursor:pointer; margin-left: auto; margin-right: auto;font-size:100%; font-weight: bold; color:white; background-color: black;padding-right:4px;padding-top:2px;border-style:solid;border-color:rgb(175,175,175);border-width:1px}
+#makeMT {position:relative; top:600px; left:25px; color:white}
+#exptArea{display:block; background:rgb(175,175,175); z-index:-2; -moz-user-select: none; -khtml-user-select: none; -webkit-user-select: none; user-select: none; width : 800px; margin-left : auto; margin-right: auto; margin-top: 30px;}
+body{display:block; background:#ffffff; font-family:Verdana;}
+div#MTreadout {color:white; position:relative; left:850px; width:100px}
+
+#screener{text-align:left; width:1000px; margin:auto; margin-top:40px; background-color:#B8DBFF; border-radius:30px; font-family:Verdana }
+#screener h2 {padding: 30px; font-size:1.3em; }
+#screener h3 {padding: 30px; font-size:1.3em; }
+#screener p {font-size:1em; padding:.4em; }
+#screener form {padding: 30px; padding-top:10px; font-size:1em; }
+#screener input {border-radius:30px; width:200px; padding: .1em; font-size:1.2em; }
+#screener select {border-radius:30px; width:200px; padding: .1em; font-size:1em}
+#IDButton {background-color: #D1D1D1}
+
+div.instructions{text-align:left; width:1000px; margin:auto; margin-top:40px; background-color:#B8DBFF; border-radius:30px; font-family:Verdana }
+div.instructions h3 {padding:30px; padding-top:0px; font-size:1.2em;}
+div.instructions h3:first-child{text-align:center; font-size:2em; padding-top:10px; padding-top:30px}
+div.instructions p {padding:30px; padding-top:0px; padding-bottom:20px; font-size:1.2em;}
+div.instructions h3.instructions {margin:auto; width: 900px; color:red; padding:20px; font-size:1.2em; border: 5px solid red; border-radius:30px}
+div.instructions h3#preloading {padding:30px; padding-bottom:10px; text-align:center; font-size:1.2em}
+div.instructions input {width:940px; padding: 10px; margin: 30px; margin-top: 0px; font-size:1.2em; border-radius:30px; background-color: #D1D1D1; font-family:Verdana }
+
+li.contact {display:block; height:auto; width:auto}
+p.consent {display:block; height:auto; width:auto}
+h3#participantCode {display:block; background:#FCF9CE; color:#222222; text-align:left; width:200px}
+ul li {border-style:solid;border-color:white;display:inline-block; height:60px; width:90px}
+
+.surveyInstructionsScreen {text-align:left; width:1000px; margin:auto; margin-top:40px; background-color:#B8DBFF; border-radius:30px; font-family:Verdana }
+.surveyInstructionsScreen  h2{padding:30px; font-size:1.2em;}
+.surveyInstructionsScreen  input{width:940px; padding: 10px; margin: 30px; margin-top: 0px; font-size:1.2em; border-radius:30px; background-color: #D1D1D1; font-family:Verdana }
+.surveyScreen {text-align:left; width:1000px; margin:auto; margin-top:40px; background-color:#B8DBFF; border-radius:30px; font-family:Verdana }
+.surveyScreen  h2{padding:30px; padding-bottom:0px; font-size:1.2em;}
+#surveyAnswersContainer {margin:auto; padding-bottom:30px; }
+#surveySecondaryInstructions {padding-left:30px; padding-bottom:30px;}
+
+#surveyAnswers {list-style-type:none; height:60px; margin-left:2px; margin-right:2px; display:block;
+-moz-user-select: none; -khtml-user-select: none; -webkit-user-select: none; user-select: none;}
+#surveyPrompt{height:100px; }
+.surveyAnswer {border-style:solid;border-color:white;display:inline-block; height:60px; width:80px;}
+#surveyAnswer {border-style:solid;border-color:white;display:inline-block; height:60px; width:80px;}
+p.surveyAnswer {font-size:x-small; font-family:"Lucida Console", Monaco, monospace; display:inline-block; text-decoration:none; color:black; height:60px; width:80px; margin-left:auto; margin-right:auto; margin-top:0px; text-align:center}
+p.surveyAnswer:hover {display:inline-block; background:rgb(175,175,175); height:60px; width: 80px}
+#surveyAnswers {-moz-user-select: none; -khtml-user-select: none; -webkit-user-select: none; user-select: none;}
+td.surveyAnswer {font-size:x-small; font-family:"Lucida Console", Monaco, monospace; background:rgb(225,225,225);display:inline-block; text-decoration:none; color:black; height:60px; width:90px; margin-left:auto; margin-right:auto; margin-top:0px; text-align:center; float:left; top:600px; border:2px solid white; display:inline-block; height:60px; width:90px; cursor:pointer;}
+td.surveyAnswer:hover {display:inline-block; background:rgb(175,175,175); height:60px; width: 90px}
+div#stim{position:relative; left:0px; top:0px; width:800px; z-index:10; display:table-cell; vertical-align: middle}
+div#feedback{display:table-cell; vertical-align: middle; text-align:center; top:0px; left:0px; position:relative; font-size:xx-large; margin-left:auto; margin-right:auto; width:800px}
+/*img#stim {display:block; margin-left: auto; margin-right: auto; text-align:center; margin-top:200px; height:400px; z-index : 111}*/
+img.stim {display:block; margin-left: auto; margin-right: auto; text-align:center; margin-top:200px; height:400px}
+p.stim {display:block; margin:0 auto; text-align:center; margin-top:250px; font-size:x-large;}
+
+.break {background-color:#B8DBFF;margin:auto; border-radius:30px;  font-family:Verdana }
+#break_text{text-align:left; width:800px; margin:auto; margin-top:40px; }
+#break_text h3{font-size:1.2em; padding:30px; }
+#break_text p{font-size:1.2em; padding:30px; }
+#break_text p:last-child {padding:30px; padding-bottom:10px; font-weight: bold; text-align:center; font-size:1.3em}
+.break input {width:740px; padding: 10px; margin: 30px; margin-top: 0px; font-size:1.2em; border-radius:30px; background-color: #D1D1D1; font-family:Verdana }
+
+.answer {border-style:solid;border-color:white;display:inline-block; height:60px; width:80px; background-color:rgb(225,225,225)}
+p.answer {font-size:x-small; font-family:"Lucida Console", Monaco, monospace; display:inline-block; text-decoration:none; color:black; height:60px; width:80px; margin-left:auto; margin-right:auto; margin-top:0px; text-align:center}
+
+.trial{display:block; margin:auto; height:95vh; border-radius:30px;}
+.trial #prompt{text-align:center; font-family:Verdana; padding-top:2vh; font-size:1.2em;}
+.trial #answerDiv {width: 900px; margin:auto; margin-bottom:2vh;}
+.trial #answerDiv input {width:770px; padding: .5vh; margin:2vh auto; margin-left:50px; font-size:2vh; border-radius:30px; background-color: #D1D1D1; font-family:Verdana }
+
+td.answer {font-size:x-small; font-family:"Lucida Console", Monaco, monospace; background:rgb(225,225,225);display:inline-block; text-decoration:none; color:black; height:60px; width:98px; margin-left:auto; margin-right:auto; margin-top:0px; text-align:center; float:left; top:600px; border:2px solid white; cursor:pointer;}
+p#c1 {font-size:100%; font-weight: bold; color:white;}
+p#c2 {font-size:100%; font-weight: bold; color:white;}
+p#c3 {font-size:100%; font-weight: bold; color:white;}
+.choice {background-color: black; box-shadow : inset 0px 0px 2px 2px; -moz-box-shadow : inset 0px 0px 2px 2px; -webkit-box-shadow : inset 0px 0px 2px 2px }
+
+.demographics {border-radius:30px; margin:auto; font-family:Verdana; height:auto; background-color:#B8DBFF}
+#demographicsPrompt {padding:20px; font-size: 1.5em; text-align:center}
+.demographics form {padding: 30px; padding-top:10px; padding-left: 40px; font-size:1em}
+.demographics input  {border-radius:30px; width:200px; font-family:Verdana; padding: .1em; font-size:1em; }
+.demographics select {border-radius:30px; width:200px; font-family:Verdana; padding: .1em; font-size:1em}
+.demographics input[type="radio"] {height:1.5em; width:1.5em;}
+.demographics input[type="checkbox"] {height:1.5em; width:1.5em;}
+#submitDemo{width:920px; padding: 10px; margin-top:20px; font-size:1.2em; border-radius:30px}
+
+.thanks {border-radius:30px; margin:auto; font-family:Verdana; font-size:1.53em;
+text-align:center; background-color:#B8DBFF; padding-top: 30px; width: 1000px; padding-bottom:30px;}
+.thanks p:first-child {border-weight:bold; color: red;}
+.thanks #participantCode {margin:auto; text-align:center; border-radius:30px;}
