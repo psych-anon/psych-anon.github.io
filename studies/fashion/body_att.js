@@ -2,7 +2,7 @@
 var subjID, IP, mTurkID;
 
 //Change at your discretion
-var study = "fashion/body_att"; //**********CHANGEME**********
+var study = "ratings/body_att"; //**********CHANGEME**********
 subjID = getSubjID(10); // # is the length of subjID
 //preventTouch(); // If you don't want people to use phones/tablets
 
@@ -76,7 +76,7 @@ postInstructions([
 		voteTask); // Make sure you put your first task here
 
 // **********CHANGEME********** Change task-specific information here
-voteTask.name = "body_att_sally"; // CHANGEME
+voteTask.name = "body_att"; // CHANGEME
 // Set the scale and instructions for the first set of prompts (prompt1)
 voteTask.prompt="What's your first impression of this person?";
 voteTask.instructions=['Evaluate people on a face rating app on various traits.'];
